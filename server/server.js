@@ -41,7 +41,8 @@ app.use(function (error, req, res, next) {
   console.log(error)
   res.status(500).send(error)
 })
-
-app.listen(3333, function () {
+const host = process.env.HOST || '0.0.0.0'
+const port = process.env.PORT || 3333
+app.listen(port, host, function () {
   console.log('Server is running on port 3333')
 })
